@@ -1,0 +1,972 @@
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One&display=swap');
+
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\ VARIABLES \\\\\\\\\\\\\\\\\\\\\\ 
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+$fur-light: #e99230;
+$fur-mid: #e4831c;
+$fur-dark: #a06930;
+$chest-white: #bcb7b3;
+$face-white: #e6e6e6;
+$eye-pupil: #090a0e;
+$eye-outer: #e0d7b0;
+$eye-inner: #9b945d;
+$nose-dark: #91615d;
+$nose-light: #d4bdcd;
+$mouth-dark: darken($face-white, 15%);
+
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\\\ MIXINS \\\\\\\\\\\\\\\\\\\\\\\ 
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+@mixin ear-outline {
+    background-color: $fur-light;
+    width: 8rem;
+    height: 17rem;
+    top: -2.5rem;
+    z-index: -10;
+    border-top-left-radius: 70%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 20%;
+}
+
+@mixin ear-inner {
+    background-color: $face-white;
+    width: 6.5rem;
+    height: 18rem;
+    top: 1rem;
+    z-index: -10;
+    border-top-left-radius: 70%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 20%;
+}
+
+@mixin eye-outline {
+    background-color: green;
+    z-index: -2;
+    width: 3.3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: none;
+}
+
+@mixin eye-inner {
+    background-color: $eye-inner;
+    width: 2.2rem;
+    z-index: -1;
+    height: 3rem;
+    border-radius: 50%;
+    display: none;
+}
+
+@mixin pupil-outline {
+    background-color: $eye-pupil;
+    z-index: 1;
+    width: .6rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: none;
+}
+
+@mixin nose-outline {
+    width: 1.5rem;
+    height: 3rem;
+    background-color: $nose-light;
+    border-radius: 50%;
+    display: none;
+}
+
+@mixin mouth-outline {
+    background-color: $mouth-dark;
+    width: .2rem;
+    height: 3rem;
+    display: none;
+}
+
+@mixin horizontal {
+    width: 35rem;
+    border: 1px dashed pink;
+    z-index: 100;
+}
+
+@mixin vertical {
+    height: 35rem;
+    border: 1px dashed pink;
+    z-index: 100;
+}
+
+@mixin eye-outer {
+    background-color: $eye-outer;
+    width: 2.2rem;
+    height: 1.1rem;
+    border-radius: 50%;
+}
+
+@mixin eye-corner {
+    width: 1rem;
+    height: .8rem;
+    background-color: $eye-outer;
+    transform: skew(35deg) rotate(6deg);
+    border-radius: 40% 0 40% 0;
+}
+
+@mixin eye-corner-right {
+    width: 1rem;
+    height: .8rem;
+    background-color: $eye-outer;
+    transform: skew(-35deg) rotate(175deg);
+    border-radius: 0% 40% 0% 40%;
+}
+
+@mixin eye-iris {
+    width: 1.6rem;
+    height: 1.17rem;
+    background-color: $eye-inner;
+    border-radius: 50%;
+}
+
+@mixin eye-pupil {
+    background-color: $eye-pupil;
+    width: .28rem;
+    height: .9rem;
+    border-radius: 50%;
+    transform: rotate(6deg);
+}
+
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\ MAIN STYLES \\\\\\\\\\\\\\\\\\\\ 
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+* {
+    position: fixed;
+    left: 5rem;
+    top: 4rem;
+    transform: scale(1.2);
+    z-index: 0;
+}
+
+.container {
+    transform: scale(.9);
+    left: 2rem;
+    top: 7rem;
+}
+
+.main-container {
+    transform: scale(.85, .9);
+    left: 2rem;
+    top: 4rem;
+
+}
+
+.head-outline {
+    background-color: $fur-mid;
+    width: 21rem;
+    height: 21rem;
+    border-radius: 40% 40% 50% 50%;
+    z-index: -9;
+}
+
+.left-ear-outline {
+    @include ear-outline;
+    left: 3rem;
+    transform: rotate(-32deg);
+}
+
+.right-ear-outline {
+    @include ear-outline;
+    left: 19.3rem;
+    transform: rotate(32deg);
+}
+
+.nose-outline-top {
+    @include nose-outline;
+    transform: rotate(90deg);
+    left: 21.15rem;
+    top: 16rem;
+}
+
+.nose-outline-btm {
+    @include nose-outline;
+    width: 1.3rem;
+    left: 21.23rem;
+    top: 16.8rem;
+}
+
+.mouth-fur-outline {
+    background-color: $face-white;
+    width: 8rem;
+    height: 9rem;
+    z-index: -8;
+    left: 16.5rem;
+    top: 18rem;
+    border-radius: 50% 50% 37% 37%;
+    display: none;
+}
+
+.mouth-outline-up {
+    @include mouth-outline;
+    left: 21.79rem;
+    top: 19.7rem;
+}
+
+.mouth-outline-left {
+    @include mouth-outline;
+    left: 20.7rem;
+    top: 22.1rem;
+    transform: rotate(50deg);
+}
+
+.mouth-outline-right {
+    @include mouth-outline;
+    left: 22.9rem;
+    top: 22.1rem;
+    transform: rotate(-50deg);
+}
+
+.left-ear-inner {
+    @include ear-inner;
+    left: 4.2rem;
+    top: -1.4rem;
+    transform: rotate(-32deg);
+}
+
+.right-ear-inner {
+    @include ear-inner;
+    left: 19rem;
+    top: -1.4rem;
+    padding-right: .5rem;
+    transform: rotate(32deg);
+}
+
+.left-ear-in-1 {
+    z-index: -10;
+    left: 2.64rem;
+    transform: rotate(32deg);
+    top: -.34rem;
+    width: 3.4rem;
+    height: 2rem;
+    border-radius: 0 50% 50% 50%;
+    background-color: $face-white;
+}
+
+.right-ear-in-1 {
+    z-index: -10;
+    left: 24.9rem;
+    top: 0rem;
+    transform: rotate(-26deg) scaleX(-1);
+    width: 3.4rem;
+    height: 2.5rem;
+    border-radius: 0 50% 50% 50%;
+    background-color: $face-white;
+}
+
+.left-ear-top-fur-1 {
+    left: 2.8rem;
+    top: 1rem;
+    background-color: $fur-light;
+    width: 3rem;
+    height: 6rem;
+    z-index: -11;
+    transform: rotate(100deg) skew(-60deg);
+}
+
+.left-ear-top-fur-2 {
+    left: 3.3rem;
+    top: .3rem;
+    background-color: $fur-light;
+    width: 3rem;
+    height: 6rem;
+    z-index: -11;
+    transform: rotate(100deg) skew(-60deg) scale(-1);
+}
+
+.left-ear-top-fur-3 {
+    left: 4.5rem;
+    top: -3.1rem;
+    background-color: $fur-light;
+    width: 2rem;
+    height: 5rem;
+    z-index: -11;
+    transform: rotate(91deg) skew(-40deg);
+}
+
+.right-ear-top-fur-1 {
+    left: -.8rem;
+    top: -.05rem;
+    background-color: $fur-light;
+    width: 3rem;
+    height: 6rem;
+    z-index: -11;
+    transform: rotate(148deg) skew(-60deg);
+}
+
+.right-ear-top-fur-2 {
+    left: -2.7rem;
+    top: .55rem;
+    background-color: $fur-light;
+    width: 3rem;
+    height: 6rem;
+    z-index: -11;
+    transform: rotate(150deg) skew(-60deg) scale(-1);
+}
+
+.right-ear-top-fur-3 {
+    left: 2.55rem;
+    top: -1.2rem;
+    background-color: $fur-light;
+    width: 2rem;
+    height: 5rem;
+    z-index: -11;
+    transform: rotate(150deg) skew(-40deg);
+}
+
+.right-ear-fur-move {
+    margin-left: 25rem;
+}
+
+.face-fur-left-1 {
+    top: 9rem;
+    left: 5rem;
+    background-color: $fur-mid;
+    width: 6rem;
+    height: 5rem;
+    z-index: -11;
+    transform: rotate(-70deg) skew(40deg);
+}
+
+.face-fur-left-2 {
+    top: 16.46rem;
+    left: 2.5rem;
+    background-color: $fur-mid;
+    width: 10rem;
+    height: 1rem;
+    z-index: -11;
+    transform: rotate(-20deg) skew(40deg);
+}
+
+.face-fur-left-3 {
+    top: 14.4rem;
+    left: 3.3rem;
+    background-color: $fur-mid;
+    width: 20rem;
+    height: 3rem;
+    z-index: -11;
+    transform: rotate(-5deg) skew(-40deg);
+}
+
+.face-fur-left-4 {
+    top: 15.2rem;
+    left: 3.3rem;
+    background-color: $fur-mid;
+    width: 20rem;
+    height: 3rem;
+    z-index: -11;
+    transform: rotate(-5deg) skew(-60deg);
+}
+
+.face-fur-left-5 {
+    top: 17.2rem;
+    left: 2.4rem;
+    background-color: $fur-mid;
+    width: 16rem;
+    height: 3rem;
+    z-index: -11;
+    transform: rotate(-10deg) skew(-60deg);
+}
+
+.face-fur-left-6 {
+    top: 21.5rem;
+    left: -1.04rem;
+    background-color: $fur-mid;
+    width: 5rem;
+    height: 2rem;
+    z-index: -11;
+    transform: rotate(-20deg) skew(-60deg);
+}
+
+.face-fur-left-7 {
+    top: 20.8rem;
+    left: 2.3rem;
+    background-color: $fur-mid;
+    width: 5rem;
+    height: 2rem;
+    z-index: -11;
+    transform: rotate(-13deg) skew(-60deg);
+}
+
+.face-fur-left-8 {
+    top: 20rem;
+    left: 3.3rem;
+    background-color: $fur-mid;
+    width: 16rem;
+    height: 4rem;
+    z-index: -11;
+    transform: rotate(-15deg) skew(-60deg);
+}
+
+.face-fur-left-9 {
+    top: 23rem;
+    left: 2.5rem;
+    background-color: $fur-mid;
+    width: 16rem;
+    height: 4rem;
+    z-index: -11;
+    transform: rotate(-5deg) skew(-63deg);
+}
+
+.face-fur-left-10 {
+    top: 25.7rem;
+    left: 8.6rem;
+    background-color: $fur-mid;
+    width: 5rem;
+    height: 2rem;
+    z-index: -11;
+    transform: rotate(5deg) skew(-60deg);
+}
+
+.face-fur-right-1 {
+    top: 8.6rem;
+    left: 19.6rem;
+    background-color: $fur-mid;
+    width: 6rem;
+    height: 5rem;
+    z-index: -11;
+    transform: rotate(75deg) skew(-40deg);
+}
+
+.face-fur-right-2 {
+    top: 12.7rem;
+    left: 20rem;
+    background-color: $fur-mid;
+    width: 6rem;
+    height: 5rem;
+    z-index: -11;
+    transform: rotate(60deg) skew(-40deg);
+}
+
+.face-fur-right-3 {
+    top: 15.7rem;
+    left: 6.7rem;
+    background-color: $fur-mid;
+    width: 20rem;
+    height: 4rem;
+    z-index: -11;
+    transform: rotate(-5deg) skew(40deg);
+}
+
+.face-fur-right-4 {
+    top: 15rem;
+    left: 8rem;
+    background-color: $fur-mid;
+    width: 15rem;
+    height: 4rem;
+    z-index: -11;
+    transform: rotate(5deg) skew(40deg);
+}
+
+.face-fur-right-4 {
+    top: 15rem;
+    left: 8rem;
+    background-color: $fur-mid;
+    width: 15rem;
+    height: 4rem;
+    z-index: -11;
+    transform: rotate(5deg) skew(40deg);
+}
+
+.face-fur-right-5 {
+    top: 19rem;
+    left: 12.5rem;
+    background-color: $fur-mid;
+    width: 15rem;
+    height: 4rem;
+    z-index: -11;
+    transform: rotate(-10deg) skew(40deg);
+}
+
+.face-fur-right-6 {
+    top: 19.71rem;
+    left: 15.05rem;
+    background-color: $fur-mid;
+    width: 15rem;
+    height: 1rem;
+    z-index: -11;
+    transform: rotate(14deg) skew(50deg);
+}
+
+.face-fur-right-7 {
+    top: 21.3rem;
+    left: 15.8rem;
+    background-color: $fur-mid;
+    width: 15rem;
+    height: 2rem;
+    z-index: -11;
+    transform: rotate(5deg) skew(60deg);
+}
+
+.face-fur-right-8 {
+    top: 22rem;
+    left: 12.5rem;
+    background-color: $fur-mid;
+    width: 15rem;
+    height: 3rem;
+    z-index: -10;
+    transform: rotate(5deg) skew(40deg);
+}
+
+.face-fur-right-9 {
+    top: 25rem;
+    left: 19.3rem;
+    background-color: $fur-mid;
+    width: 10rem;
+    height: 2rem;
+    z-index: -11;
+    transform: rotate(5deg) skew(50deg);
+}
+
+.face-fur-right-10 {
+    top: 25.5rem;
+    left: 15.3rem;
+    background-color: $fur-mid;
+    width: 8rem;
+    height: 2rem;
+    z-index: -11;
+    transform: rotate(-9deg) skew(50deg);
+}
+
+.mouth-outline {
+    border-radius: 35% 35% 50% 50%;
+    left: 12.1rem;
+    top: 22.8rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: $face-white;
+    // background-image: radial-gradient( $face-white 40%, rgba(0, 0, 0, 0) 70%);
+}
+
+.mouth-line-1 {
+    top: 25rem;
+    left: 11.4rem;
+    width: 3.8rem;
+    height: 1.5rem;
+    transform: rotate(-20deg);
+    border-bottom: 2px solid black;
+    border-radius: 50%;
+}
+
+.mouth-line-2 {
+    top: 25rem;
+    left: 15.04rem;
+    width: 3.8rem;
+    height: 1.5rem;
+    transform: rotate(20deg);
+    border-bottom: 2px solid black;
+    border-radius: 50%;
+}
+
+.mouth-line-3 {
+    top: 23.55rem;
+    left: 14.85rem;
+    width: 2rem;
+    height: 1.5rem;
+    transform: rotate(90deg);
+    border-bottom: 1px solid black;
+}
+
+.left-eye {
+
+}
+
+.left-eye-outer {
+    @include eye-outer;
+    left: 4rem;
+    top: 10.5rem;
+    transform: rotate(20deg);
+}
+
+.left-eye-left {
+    @include eye-corner;
+    top: 10.4rem;
+    left: 3.97rem;
+}
+
+.left-eye-right {
+    @include eye-corner;
+    top: 10.95rem;
+    left: 5.18rem;
+}
+
+.right-eye {
+    margin-left: 8rem;
+}
+
+.right-eye-outer {
+    @include eye-outer;
+    left: 4rem;
+    top: 10.5rem;
+    transform: rotate(155deg);
+}
+
+.right-eye-left {
+    @include eye-corner-right;
+    top: 10.95rem;
+    left: 3.97rem;
+}
+
+.right-eye-right {
+    @include eye-corner-right;
+    top: 10.3rem;
+    left: 5.18rem;
+}
+
+.left-iris {
+    @include eye-iris;
+    top: 10.47rem;
+    left: 4.3rem;
+    transform: rotate(18deg);
+}
+
+.right-iris {
+    @include eye-iris;
+    top: 10.45rem;
+    left: 4.3rem;
+    transform: rotate(155deg);
+}
+
+.left-pupil {
+    @include eye-pupil;
+    left: 5rem;
+    top: 10.6rem;
+}
+
+.right-pupil {
+    @include eye-pupil;
+    left: 4.96rem;
+    top: 10.55rem;
+    transform: rotate(174deg);
+}
+
+.nose {
+    background-color: $nose-dark;
+    border-radius: 40% 40% 0 0;
+    width: 2rem;
+    height: .8rem;
+    top: 22rem;
+    left: 14.15rem;
+}
+
+.nose-btm {
+    background-color: $nose-dark;
+    border-radius: 40% 40% 0 0;
+    width: 2.45rem;
+    height: .8rem;
+    top: 22.3rem;
+    left: 13.9rem;
+    transform: rotate(180deg);
+}
+
+.nose-angle-1 {
+    background-color: $nose-dark;
+    width: 1.5rem;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 50%;
+    height: .8rem;
+    top: 22.45rem;
+    left: 14rem;
+    transform: rotate(20deg);
+}
+
+.nose-angle-2 {
+    background-color: $nose-dark;
+    width: 1.5rem;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 50%;
+    height: .8rem;
+    top: 22.45rem;
+    left: 14.75rem;
+    transform: rotate(-20deg);
+}
+
+
+
+
+.tbc {
+    font-family: 'Fugaz One', cursive;
+    font-size: 3.8rem;
+    top: -17rem;
+    left: -3rem;
+    width: 70rem;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.grid {
+    margin-top: -6.82rem;
+    z-index: 1000;
+}
+
+.guide-vert-center {
+    top: -1.1rem;
+    left: 15.4rem;
+    @include vertical; 
+    border-color: purple;
+    z-index: 10000;
+}
+
+.guide-horiz-center {
+    top: 14.58rem;
+    left: -2.1rem;
+    @include horizontal;
+    border-color: purple;
+    z-index: 10000;
+}
+
+
+.guide-vert {
+    top: -1.1rem;
+    left: 15.4rem;
+    @include vertical; 
+    border-color: purple;
+}
+
+.guide-vert-1 {
+    top: -1.1rem;
+    left: 13.15rem;
+    @include vertical; 
+}
+
+.guide-vert-2 {
+    top: -1.1rem;
+    left: 10.9rem;
+    @include vertical 
+}
+
+.guide-vert-3 {
+    top: -1.1rem;
+    left: 8.6rem;
+    @include vertical; 
+    border-color: blueviolet;
+}
+
+.guide-vert-4 {
+    top: -1.1rem;
+    left: 6.42rem;
+    @include vertical; 
+}
+
+.guide-vert-5 {
+    top: -1.1rem;
+    left: 4.2rem;
+    @include vertical; 
+}
+
+.guide-vert-6 {
+    top: -1.1rem;
+    left: 1.9rem;
+    @include vertical; 
+    border-color: blueviolet;
+}
+
+.guide-vert-7 {
+    top: -1.1rem;
+    left: 17.66rem;
+    @include vertical; 
+}
+
+.guide-vert-8 {
+    top: -1.1rem;
+    left: 20rem;
+    @include vertical; 
+}
+
+
+.guide-vert-9 {
+    top: -1.1rem;
+    left: 22.2rem;
+    @include vertical; 
+    border-color: blueviolet;
+}
+
+
+.guide-vert-10 {
+    top: -1.1rem;
+    left: 24.4rem;
+    @include vertical; 
+}
+
+
+.guide-vert-11 {
+    top: -1.1rem;
+    left: 26.6rem;
+    @include vertical; 
+}
+
+
+.guide-vert-12 {
+    top: -1.1rem;
+    left: 28.9rem;
+    @include vertical(); 
+    border-color: blueviolet;
+}
+
+.guide-vert-13 {
+    top: -1.1rem;
+    left: -.3rem;
+    @include vertical; 
+}
+
+.guide-vert-14 {
+    top: -1.1rem;
+    left: 31.2rem;
+    @include vertical(); 
+}
+
+.guide-horiz {
+    top: 14.58rem;
+    left: -2.1rem;
+    @include horizontal;
+    border-color: blueviolet;
+}
+
+.guide-horiz-1 {
+    top: 12.3rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-2 {
+    top: 10rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-3 {
+    top: 7.85rem;
+    left: -2.1rem;
+    @include horizontal;
+    border-color: blueviolet;
+}
+
+.guide-horiz-4 {
+    top: 5.6rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-5 {
+    top: 3.4rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-6 {
+    top: 1.1rem;
+    left: -2.1rem;
+    @include horizontal;
+    border-color: blueviolet;
+}
+
+.guide-horiz-7 {
+    top: -1.2rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-8 {
+    top: -3.3rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-9 {
+    top: 16.9rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-10 {
+    top: 19.1rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-11 {
+    top: 21.4rem;
+    left: -2.1rem;
+    @include horizontal;
+    border-color: blueviolet;
+}
+
+.guide-horiz-12 {
+    top: 23.7rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+
+.guide-horiz-13 {
+    top: 25.8rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-14 {
+    top: 28.1rem;
+    left: -2.1rem;
+    @include horizontal;
+    border-color: blueviolet;
+}
+
+.guide-horiz-15 {
+    top: 30.35rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-16 {
+    top: 32.55rem;
+    left: -2.1rem;
+    @include horizontal;
+}
+
+.guide-horiz-17 {
+    top: 34.7rem;
+    left: -2.1rem;
+    @include horizontal;
+    border-color: blueviolet;
+}
+
+.guide-horiz-18 {
+    top: 36.9rem;
+    left: -2.1rem;
+    @include horizontal;
+}
